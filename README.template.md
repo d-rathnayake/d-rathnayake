@@ -29,6 +29,22 @@
 
 ---
 
+### 🎮 Player card
+
+<p align="center">
+  <img src="assets/generated/level.svg" alt="Player card: level, class and XP" width="100%">
+</p>
+
+<p align="center"><sub>XP is earned from real work: contributions, stars, repos, followers and languages.</sub></p>
+
+### 🏆 Achievements
+
+<p align="center">
+  <img src="assets/generated/achievements.svg" alt="Achievement wall" width="100%">
+</p>
+
+---
+
 ### 🔮 Now casting
 
 {{now}}
