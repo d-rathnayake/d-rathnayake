@@ -10,6 +10,8 @@ on:
       - profile.config.json
       - README.template.md
       - scripts/profile.mjs
+      - scripts/scenes.mjs
+      - scripts/magic.mjs
 
 permissions:
   contents: write
