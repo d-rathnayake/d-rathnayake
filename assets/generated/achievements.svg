@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="900" height="350" role="img" aria-labelledby="t" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">Achievements: 1 of 10 unlocked</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0b0720"/>
+    <stop offset="1" stop-color="#1e1048"/>
+  </linearGradient>
+  <linearGradient id="unlock" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#facc15"/>
+    <stop offset="0.5" stop-color="#f472b6"/>
+    <stop offset="1" stop-color="#22d3ee"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="350" rx="24" fill="url(#sky)"/>
+<text x="24" y="44" font-size="22" font-weight="700" fill="#ffffff">✦ Achievements</text>
+<text x="24" y="66" font-size="12.5" fill="#c4b5fd">1 of 10 unlocked. Every achievement is earned from real activity.</text>
+<text x="876" y="44" font-size="22" font-weight="700" text-anchor="end" fill="#facc15">1/10</text>
+<g>
+  <rect x="16" y="84" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.07" stroke="#f472b6" stroke-opacity="0.8"/>
+  <path d="M98.00,105.00 L101.00,117.00 L113.00,120.00 L101.00,123.00 L98.00,135.00 L95.00,123.00 L83.00,120.00 L95.00,117.00Z" fill="url(#unlock)"/>
+  
+  <text x="98" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">First Spark</text>
+  <text x="98" y="182" text-anchor="middle" font-size="10.5" fill="#c4b5fd">First repo published</text>
+</g>
+<g opacity="0.55">
+  <rect x="192" y="84" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M274.00,105.00 L287.05,112.50 L287.05,127.50 L274.00,135.00 L260.95,127.50 L260.95,112.50Z" fill="#475569"/>
+  <rect x="269" y="138" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M271,138 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="274" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Polyglot</text>
+  <text x="274" y="182" text-anchor="middle" font-size="10.5" fill="#c4b5fd">Spells in 5+ languages</text>
+</g>
+<g opacity="0.55">
+  <rect x="368" y="84" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M450.00,105.00 L453.97,114.54 L464.27,115.36 L456.42,122.09 L458.82,132.14 L450.00,126.75 L441.18,132.14 L443.58,122.09 L435.73,115.36 L446.03,114.54Z" fill="#475569"/>
+  <rect x="445" y="138" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M447,138 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="450" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Star Collector</text>
+  <text x="450" y="182" text-anchor="middle" font-size="10.5" fill="#c4b5fd">10+ stars earned</text>
+</g>
+<g opacity="0.55">
+  <rect x="544" y="84" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M629.00,105.00 L617.00,122.25 L625.25,122.25 L622.25,135.00 L635.00,117.00 L626.75,117.00Z" fill="#475569"/>
+  <rect x="621" y="138" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M623,138 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="626" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Century Caster</text>
+  <text x="626" y="182" text-anchor="middle" font-size="10.5" fill="#c4b5fd">100+ contributions/yr</text>
+</g>
+<g opacity="0.55">
+  <rect x="720" y="84" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M802.00,105.00 L808.75,116.25 L811.00,124.50 L806.50,132.75 L802.00,135.00 L797.50,132.75 L793.00,124.50 L795.25,116.25Z" fill="#475569"/>
+  <rect x="797" y="138" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M799,138 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="802" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Ember Keeper</text>
+  <text x="802" y="182" text-anchor="middle" font-size="10.5" fill="#c4b5fd">7-day streak</text>
+</g>
+<g opacity="0.55">
+  <rect x="16" y="208" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M98.00,229.00 L104.75,240.25 L107.00,248.50 L102.50,256.75 L98.00,259.00 L93.50,256.75 L89.00,248.50 L91.25,240.25Z" fill="#475569"/>
+  <rect x="93" y="262" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M95,262 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="98" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Eternal Flame</text>
+  <text x="98" y="306" text-anchor="middle" font-size="10.5" fill="#c4b5fd">30-day streak</text>
+</g>
+<g opacity="0.55">
+  <rect x="192" y="208" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M263.50,256.00 L263.50,242.50 L269.50,242.50 L269.50,232.00 L274.00,232.00 L274.00,242.50 L278.50,242.50 L278.50,235.00 L284.50,235.00 L284.50,256.00Z" fill="#475569"/>
+  <rect x="269" y="262" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M271,262 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="274" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Open Hand</text>
+  <text x="274" y="306" text-anchor="middle" font-size="10.5" fill="#c4b5fd">10+ pull requests</text>
+</g>
+<g opacity="0.55">
+  <rect x="368" y="208" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M450.00,229.00 L453.00,247.00 L457.50,247.75 L457.50,250.75 L452.25,250.75 L452.25,259.00 L447.75,259.00 L447.75,250.75 L442.50,250.75 L442.50,247.75 L447.00,247.00Z" fill="#475569"/>
+  <rect x="445" y="262" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M447,262 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="450" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Bug Slayer</text>
+  <text x="450" y="306" text-anchor="middle" font-size="10.5" fill="#c4b5fd">5+ issues opened</text>
+</g>
+<g opacity="0.55">
+  <rect x="544" y="208" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <path d="M611.00,253.00 L614.00,235.00 L620.00,245.50 L626.00,232.00 L632.00,245.50 L638.00,235.00 L641.00,253.00Z" fill="#475569"/>
+  <rect x="621" y="262" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M623,262 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="626" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Community Voice</text>
+  <text x="626" y="306" text-anchor="middle" font-size="10.5" fill="#c4b5fd">10+ followers</text>
+</g>
+<g opacity="0.55">
+  <rect x="720" y="208" width="164" height="112" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#334155" stroke-opacity="0.4"/>
+  <circle cx="802" cy="244" r="14.25" fill="#475569"/>
+  <rect x="797" y="262" width="10" height="8" rx="2" fill="#64748b"/>
+<path d="M799,262 v-3 a3,3 0 0 1 6,0 v3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="802" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Archmage</text>
+  <text x="802" y="306" text-anchor="middle" font-size="10.5" fill="#c4b5fd">Reached level 20</text>
+</g>
+</svg>
