@@ -21,6 +21,10 @@
     "Redesigning Android utilities with a premium look"
   ],
   "stack": ["html", "css", "js", "ts", "react", "nextjs", "tailwind", "kotlin", "android", "firebase", "github", "git", "vscode", "figma"],
+  "chips": ["WEB", "ANDROID", "UI/UX", "FIREBASE"],
+  "tagline": "CODE · CREATE · CONJURE",
+  "location": "SRI LANKA",
+  "footer": "Thanks for visiting the magical world",
   "links": {
     "linkedin": "",
     "email": "",
