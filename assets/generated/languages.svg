@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 162" width="900" height="162" role="img" aria-labelledby="t" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">Most used languages</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0b0720"/>
+    <stop offset="1" stop-color="#06202e"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="162" rx="24" fill="url(#sky)"/>
+<text x="24" y="44" font-size="22" font-weight="700" fill="#ffffff">✦ Favourite spells</text>
+<text x="24" y="62" font-size="12.5" fill="#c4b5fd">Share of code across owned repositories, forks excluded.</text>
+<rect x="24.0" y="72" width="472.9" height="14" fill="#e34c26" rx="7"/><rect x="496.9" y="72" width="309.8" height="14" fill="#f1e05a" rx="0"/><rect x="806.7" y="72" width="69.3" height="14" fill="#563d7c" rx="7"/>
+<circle cx="30" cy="114" r="6" fill="#e34c26"/>
+<text x="44" y="118" font-size="14" fill="#f5f3ff">HTML</text>
+<text x="274" y="118" font-size="14" fill="#c4b5fd" text-anchor="end">55.5%</text><circle cx="318" cy="114" r="6" fill="#f1e05a"/>
+<text x="332" y="118" font-size="14" fill="#f5f3ff">JavaScript</text>
+<text x="562" y="118" font-size="14" fill="#c4b5fd" text-anchor="end">36.4%</text><circle cx="606" cy="114" r="6" fill="#563d7c"/>
+<text x="620" y="118" font-size="14" fill="#f5f3ff">CSS</text>
+<text x="850" y="118" font-size="14" fill="#c4b5fd" text-anchor="end">8.1%</text>
+</svg>

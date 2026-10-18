@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 326" width="900" height="326" role="img" aria-labelledby="t" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">Repository and contribution statistics</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0b0720"/>
+    <stop offset="1" stop-color="#1e1048"/>
+  </linearGradient>
+  <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#facc15"/>
+    <stop offset="0.5" stop-color="#f472b6"/>
+    <stop offset="1" stop-color="#22d3ee"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="326" rx="24" fill="url(#sky)"/>
+<text x="24" y="44" font-size="22" font-weight="700" fill="#ffffff">✦ Magic metrics</text>
+<text x="24" y="66" font-size="12.5" fill="#c4b5fd">Contributions cover the last 12 months. Private repositories are counted only.</text>
+<rect x="736" y="34" width="140" height="3" rx="1.5" fill="url(#bar)"/>
+<g>
+  <rect x="18" y="84" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#a78bfa" stroke-opacity="0.55"/>
+  <rect x="34" y="84" width="40" height="4" rx="2" fill="#a78bfa"/>
+  <text x="36" y="136" font-size="30" font-weight="700" fill="#ffffff">5</text>
+  <text x="36" y="158" font-size="13" fill="#c4b5fd">Public repositories</text>
+</g>
+<g>
+  <rect x="238" y="84" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#c084fc" stroke-opacity="0.55"/>
+  <rect x="254" y="84" width="40" height="4" rx="2" fill="#c084fc"/>
+  <text x="256" y="136" font-size="30" font-weight="700" fill="#ffffff">n/a</text>
+  <text x="256" y="158" font-size="13" fill="#c4b5fd">Private repositories</text>
+</g>
+<g>
+  <rect x="458" y="84" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#facc15" stroke-opacity="0.55"/>
+  <rect x="474" y="84" width="40" height="4" rx="2" fill="#facc15"/>
+  <text x="476" y="136" font-size="30" font-weight="700" fill="#ffffff">0</text>
+  <text x="476" y="158" font-size="13" fill="#c4b5fd">Stars earned</text>
+</g>
+<g>
+  <rect x="678" y="84" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#22d3ee" stroke-opacity="0.55"/>
+  <rect x="694" y="84" width="40" height="4" rx="2" fill="#22d3ee"/>
+  <text x="696" y="136" font-size="30" font-weight="700" fill="#ffffff">0</text>
+  <text x="696" y="158" font-size="13" fill="#c4b5fd">Forks of my repos</text>
+</g>
+<g>
+  <rect x="18" y="192" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#34d399" stroke-opacity="0.55"/>
+  <rect x="34" y="192" width="40" height="4" rx="2" fill="#34d399"/>
+  <text x="36" y="244" font-size="30" font-weight="700" fill="#ffffff">54</text>
+  <text x="36" y="266" font-size="13" fill="#c4b5fd">Contributions (1 year)</text>
+</g>
+<g>
+  <rect x="238" y="192" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#fb923c" stroke-opacity="0.55"/>
+  <rect x="254" y="192" width="40" height="4" rx="2" fill="#fb923c"/>
+  <text x="256" y="244" font-size="30" font-weight="700" fill="#ffffff">1</text>
+  <text x="256" y="266" font-size="13" fill="#c4b5fd">Pull requests</text>
+</g>
+<g>
+  <rect x="458" y="192" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#f472b6" stroke-opacity="0.55"/>
+  <rect x="474" y="192" width="40" height="4" rx="2" fill="#f472b6"/>
+  <text x="476" y="244" font-size="30" font-weight="700" fill="#ffffff">0</text>
+  <text x="476" y="266" font-size="13" fill="#c4b5fd">Issues opened</text>
+</g>
+<g>
+  <rect x="678" y="192" width="204" height="92" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#60a5fa" stroke-opacity="0.55"/>
+  <rect x="694" y="192" width="40" height="4" rx="2" fill="#60a5fa"/>
+  <text x="696" y="244" font-size="30" font-weight="700" fill="#ffffff">1 / 2</text>
+  <text x="696" y="266" font-size="13" fill="#c4b5fd">Streak (now / best)</text>
+</g>
+<text x="24" y="310" font-size="11.5" fill="#8b7fb8">Updated 2026-10-18 13:43 UTC</text>
+</svg>
