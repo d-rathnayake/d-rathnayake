@@ -4,6 +4,7 @@
 // descriptions and links are never written to any output file.
 import fs from 'node:fs';
 import path from 'node:path';
+import { computeRpg, levelSvg, achievementsSvg } from './magic.mjs';
 
 const API = 'https://api.github.com';
 const UA = 'magic-profile-generator';
@@ -569,6 +570,12 @@ export async function main() {
   }
   const st = contrib ? streaks(contrib.days) : null;
   const events = await fetchEvents(api, login);
+  let followers = 0;
+  try {
+    followers = (await api.rest(`/users/${login}`)).followers || 0;
+  } catch (e) {
+    console.warn('User data unavailable:', e.message);
+  }
 
   const updated = new Date().toISOString().slice(0, 16).replace('T', ' ');
   const dash = 'n/a';
@@ -597,6 +604,35 @@ export async function main() {
   );
   fs.writeFileSync(path.join(outDir, 'stats.svg'), statsSvg(tiles, updated));
   fs.writeFileSync(path.join(outDir, 'languages.svg'), languagesSvg(shares));
+
+  const contributions = contrib ? contrib.total : 0;
+  const prs = contrib ? contrib.prs : 0;
+  const issues = contrib ? contrib.issues : 0;
+  const longestStreak = st ? st.longest : 0;
+  const game = {
+    contributions,
+    prs,
+    issues,
+    longestStreak,
+    stars: rs.stars,
+    followers,
+    repos: rs.publicCount + (rs.privateCount || 0),
+    languageCount: Object.keys(langTotals).length,
+    topLang: shares[0] ? shares[0].name : '',
+  };
+  const rpg = computeRpg({ ...game, contributions });
+  game.level = rpg.level;
+  fs.writeFileSync(
+    path.join(outDir, 'level.svg'),
+    levelSvg({
+      name: cfg.name || login,
+      rpg,
+      avatar,
+      topLang: game.topLang,
+      stats: { contributions: contributions, streak: st ? st.current : 0, stars: rs.stars, repos: game.repos },
+    })
+  );
+  fs.writeFileSync(path.join(outDir, 'achievements.svg'), achievementsSvg(game));
 
   const topLangs = shares.filter((s) => s.name !== 'Other').slice(0, 3).map((s) => s.name);
   const total = rs.publicCount + (rs.privateCount || 0);
