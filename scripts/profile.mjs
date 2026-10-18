@@ -1,10 +1,18 @@
 #!/usr/bin/env node
 // Generates the magical profile SVGs and README.md from GitHub data.
+// Uses premium animated scenes from scenes.mjs + RPG layer from magic.mjs.
 // Private repositories are only counted or aggregated. Their names,
 // descriptions and links are never written to any output file.
 import fs from 'node:fs';
 import path from 'node:path';
 import { computeRpg, levelSvg, achievementsSvg } from './magic.mjs';
+import {
+  headerSvg,
+  skillsSvg,
+  skySvg,
+  constellationSvg,
+  footerSvg,
+} from './scenes.mjs';
 
 const API = 'https://api.github.com';
 const UA = 'magic-profile-generator';
@@ -22,13 +30,10 @@ export const num = (n) => Number(n).toLocaleString('en-US');
 
 const isSet = (v) => typeof v === 'string' && v.trim() !== '' && !v.startsWith('YOUR_');
 
-// Small deterministic PRNG so the star field is identical between runs.
 export function seeded(seed = 7) {
   let s = seed;
   return () => (s = (s * 9301 + 49297) % 233280) / 233280;
 }
-
-const FONT = "'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
 
 const LANG_COLORS = {
   JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5', HTML: '#e34c26', CSS: '#563d7c',
@@ -249,8 +254,6 @@ export function activityLines(events, limit = 5) {
 
 /* --------------------------------------------------------------- avatar */
 
-// The header is an SVG shown through <img>, so it cannot load external images.
-// The picture is embedded as a data URI: live GitHub avatar first, then a local file.
 export async function fetchAvatar(login, root = process.cwd()) {
   try {
     const res = await fetch(`https://github.com/${encodeURIComponent(login)}.png?size=240`, {
@@ -277,237 +280,6 @@ export async function fetchAvatar(login, root = process.cwd()) {
     }
   }
   return null;
-}
-
-/* ------------------------------------------------------------ SVG: header */
-
-// Four-point sparkle centred on (x, y) with radius r.
-const sparkle = (x, y, r, fill) => {
-  const k = r * 0.22;
-  return `<path d="M${x},${y - r} L${x + k},${y - k} L${x + r},${y} L${x + k},${y + k} L${x},${y + r} L${x - k},${y + k} L${x - r},${y} L${x - k},${y - k} Z" fill="${fill}"/>`;
-};
-
-// Circular orbit path starting at the left side of the circle, clockwise or counter-clockwise.
-const orbit = (cx, cy, r, clockwise = true) =>
-  clockwise
-    ? `M${cx - r},${cy} a${r},${r} 0 1,0 ${2 * r},0 a${r},${r} 0 1,0 ${-2 * r},0`
-    : `M${cx + r},${cy} a${r},${r} 0 1,0 ${-2 * r},0 a${r},${r} 0 1,0 ${2 * r},0`;
-
-export function headerSvg({ headline, name, roles, avatar = null }) {
-  const W = 900;
-  const H = 300;
-  const cx = 150;
-  const cy = 150;
-  const list = roles.length ? roles : ['Developer'];
-  const n = list.length;
-  const D = 3; // seconds each role stays on screen
-  const T = n * D;
-  const vis = 100 / n;
-  const animated = n > 1;
-
-  const rnd = seeded(11);
-  const stars = Array.from({ length: 60 }, () => {
-    const x = (rnd() * W).toFixed(1);
-    const y = (rnd() * H).toFixed(1);
-    const r = (0.6 + rnd() * 1.6).toFixed(2);
-    const dur = (2.5 + rnd() * 3).toFixed(2);
-    const delay = (rnd() * 4).toFixed(2);
-    return `<circle class="tw" cx="${x}" cy="${y}" r="${r}" fill="#ffffff" style="animation-duration:${dur}s;animation-delay:-${delay}s"/>`;
-  }).join('');
-
-  const roleEls = list
-    .map((r, i) => {
-      const cls = animated ? `role${i === 0 ? ' role0' : ''}` : 'role role0';
-      const style = animated ? ` style="animation-delay:${i * D}s"` : '';
-      return `<text class="${cls}" x="318" y="206"${style}>${esc(r)}</text>`;
-    })
-    .join('\n  ');
-
-  const css = `<style>
-  .tw{animation:tw 3s ease-in-out infinite}
-  @keyframes tw{0%,100%{opacity:.15}50%{opacity:1}}
-  .role{font-size:22px;fill:#e9d5ff;opacity:${animated ? 0 : 1};${animated ? `animation:cyc ${T}s infinite` : ''}}
-  ${animated ? `@keyframes cyc{0%{opacity:0;transform:translateY(8px)}3%{opacity:1;transform:translateY(0)}${(vis - 3).toFixed(2)}%{opacity:1;transform:translateY(0)}${vis.toFixed(2)}%{opacity:0;transform:translateY(-8px)}100%{opacity:0}}` : ''}
-  @media (prefers-reduced-motion: reduce){.tw,.role{animation:none}.role{opacity:0}.role0{opacity:1}}
-</style>`;
-
-  const avatarEl = avatar
-    ? `<image href="${avatar}" x="${cx - 80}" y="${cy - 80}" width="160" height="160" clip-path="url(#avclip)" preserveAspectRatio="xMidYMid slice"/>`
-    : `<circle cx="${cx}" cy="${cy}" r="80" fill="#1e1b4b"/>
-  <text x="${cx}" y="${cy + 22}" text-anchor="middle" font-size="56" font-weight="700" fill="#ffffff">${esc(
-      name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase()
-    )}</text>`;
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="t" font-family="${FONT}">
-<title id="t">${esc(name)} - ${esc(headline)}</title>
-<defs>
-  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0b0720"/>
-    <stop offset="0.55" stop-color="#1e1048"/>
-    <stop offset="1" stop-color="#06202e"/>
-  </linearGradient>
-  <linearGradient id="aur1" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#7c3aed" stop-opacity="0"/>
-    <stop offset="0.5" stop-color="#22d3ee" stop-opacity="0.9"/>
-    <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="aur2" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#f472b6" stop-opacity="0"/>
-    <stop offset="0.5" stop-color="#a78bfa" stop-opacity="0.85"/>
-    <stop offset="1" stop-color="#facc15" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#facc15"/>
-    <stop offset="0.5" stop-color="#f472b6"/>
-    <stop offset="1" stop-color="#22d3ee"/>
-  </linearGradient>
-  <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#facc15"/>
-    <stop offset="0.5" stop-color="#f472b6"/>
-    <stop offset="1" stop-color="#22d3ee"/>
-  </linearGradient>
-  <linearGradient id="comet" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
-    <stop offset="1" stop-color="#facc15" stop-opacity="1"/>
-  </linearGradient>
-  <radialGradient id="halo" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#a78bfa" stop-opacity="0.55"/>
-    <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
-  </radialGradient>
-  <clipPath id="avclip"><circle cx="${cx}" cy="${cy}" r="80"/></clipPath>
-  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="28"/></filter>
-</defs>
-${css}
-
-<rect width="${W}" height="${H}" rx="24" fill="url(#sky)"/>
-
-<g filter="url(#blur)" opacity="0.6">
-  <ellipse cx="200" cy="40" rx="280" ry="60" fill="url(#aur1)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;70 12;0 0" dur="12s" repeatCount="indefinite"/>
-  </ellipse>
-  <ellipse cx="720" cy="270" rx="320" ry="70" fill="url(#aur2)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;-60 -14;0 0" dur="15s" repeatCount="indefinite"/>
-  </ellipse>
-</g>
-
-${stars}
-
-<g>
-  <animateTransform attributeName="transform" type="translate" values="-160,20;960,140;960,140" keyTimes="0;0.2;1" dur="9s" repeatCount="indefinite"/>
-  <line x1="0" y1="0" x2="-110" y2="-18" stroke="url(#comet)" stroke-width="2.2" stroke-linecap="round"/>
-  <circle cx="0" cy="0" r="2" fill="#ffffff"/>
-</g>
-
-<circle cx="${cx}" cy="${cy}" r="124" fill="url(#halo)"/>
-<circle cx="${cx}" cy="${cy}" r="112" fill="none" stroke="#a78bfa" stroke-opacity="0.25" stroke-width="1"/>
-<circle cx="${cx}" cy="${cy}" r="132" fill="none" stroke="#22d3ee" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 6"/>
-<circle r="5" fill="#facc15"><animateMotion dur="10s" repeatCount="indefinite" path="${orbit(cx, cy, 112, true)}"/></circle>
-<circle r="3.5" fill="#22d3ee"><animateMotion dur="16s" repeatCount="indefinite" path="${orbit(cx, cy, 132, false)}"/></circle>
-
-<g>
-  <animateTransform attributeName="transform" type="rotate" from="0 ${cx} ${cy}" to="360 ${cx} ${cy}" dur="18s" repeatCount="indefinite"/>
-  <circle cx="${cx}" cy="${cy}" r="96" fill="none" stroke="url(#ringGrad)" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 10"/>
-</g>
-${avatarEl}
-<circle cx="${cx}" cy="${cy}" r="82" fill="none" stroke="url(#ringGrad)" stroke-width="2"/>
-
-${sparkle(300, 84, 9, '#facc15')}
-<text x="318" y="90" font-size="15" font-weight="700" letter-spacing="4" fill="#facc15">${esc(headline.toUpperCase())}</text>
-<text x="300" y="150" font-size="50" font-weight="700" fill="url(#titleGrad)">${esc(name)}</text>
-${roleEls}
-<rect x="300" y="226" width="150" height="3" rx="1.5" fill="url(#titleGrad)"/>
-<text x="300" y="262" font-size="13" letter-spacing="3" fill="#c4b5fd">CODE · CREATE · CONJURE</text>
-${sparkle(860, 60, 6, '#f472b6')}
-${sparkle(820, 250, 4, '#22d3ee')}
-</svg>`;
-}
-
-/* ------------------------------------------------------------- SVG: stats */
-
-export function statsSvg(tiles, updated) {
-  const cols = 4;
-  const tw = 204;
-  const th = 92;
-  const gap = 16;
-  const x0 = 18;
-  const y0 = 84;
-  const rows = Math.ceil(tiles.length / cols);
-  const H = y0 + rows * th + (rows - 1) * gap + 42;
-  const cells = tiles
-    .map((t, i) => {
-      const x = x0 + (i % cols) * (tw + gap);
-      const y = y0 + Math.floor(i / cols) * (th + gap);
-      return `<g>
-  <rect x="${x}" y="${y}" width="${tw}" height="${th}" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="${t.color}" stroke-opacity="0.55"/>
-  <rect x="${x + 16}" y="${y}" width="40" height="4" rx="2" fill="${t.color}"/>
-  <text x="${x + 18}" y="${y + 52}" font-size="30" font-weight="700" fill="#ffffff">${esc(t.value)}</text>
-  <text x="${x + 18}" y="${y + 74}" font-size="13" fill="#c4b5fd">${esc(t.label)}</text>
-</g>`;
-    })
-    .join('\n');
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 ${H}" width="900" height="${H}" role="img" aria-labelledby="t" font-family="${FONT}">
-<title id="t">Repository and contribution statistics</title>
-<defs>
-  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0b0720"/>
-    <stop offset="1" stop-color="#1e1048"/>
-  </linearGradient>
-  <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#facc15"/>
-    <stop offset="0.5" stop-color="#f472b6"/>
-    <stop offset="1" stop-color="#22d3ee"/>
-  </linearGradient>
-</defs>
-<rect width="900" height="${H}" rx="24" fill="url(#sky)"/>
-<text x="24" y="44" font-size="22" font-weight="700" fill="#ffffff">✦ Magic metrics</text>
-<text x="24" y="66" font-size="12.5" fill="#c4b5fd">Contributions cover the last 12 months. Private repositories are counted only.</text>
-<rect x="${900 - 24 - 140}" y="34" width="140" height="3" rx="1.5" fill="url(#bar)"/>
-${cells}
-<text x="24" y="${H - 16}" font-size="11.5" fill="#8b7fb8">Updated ${esc(updated)} UTC</text>
-</svg>`;
-}
-
-/* -------------------------------------------------------- SVG: languages */
-
-export function languagesSvg(shares) {
-  const W = 900;
-  const barX = 24;
-  const barW = W - 48;
-  const rows = Math.ceil(shares.length / 3);
-  const H = shares.length ? 112 + rows * 30 + 20 : 120;
-  let bar = '';
-  let legend = '';
-  if (shares.length) {
-    let x = barX;
-    shares.forEach((s, i) => {
-      const w = Math.max(2, (s.pct / 100) * barW);
-      const first = i === 0;
-      const last = i === shares.length - 1;
-      bar += `<rect x="${x.toFixed(1)}" y="72" width="${w.toFixed(1)}" height="14" fill="${s.color}" rx="${first || last ? 7 : 0}"/>`;
-      x += w;
-      const lx = barX + (i % 3) * 288;
-      const ly = 118 + Math.floor(i / 3) * 30;
-      legend += `<circle cx="${lx + 6}" cy="${ly - 4}" r="6" fill="${s.color}"/>
-<text x="${lx + 20}" y="${ly}" font-size="14" fill="#f5f3ff">${esc(s.name)}</text>
-<text x="${lx + 250}" y="${ly}" font-size="14" fill="#c4b5fd" text-anchor="end">${s.pct.toFixed(1)}%</text>`;
-    });
-  } else {
-    legend = `<text x="24" y="90" font-size="14" fill="#c4b5fd">No language data yet.</text>`;
-  }
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="t" font-family="${FONT}">
-<title id="t">Most used languages</title>
-<defs>
-  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0b0720"/>
-    <stop offset="1" stop-color="#06202e"/>
-  </linearGradient>
-</defs>
-<rect width="${W}" height="${H}" rx="24" fill="url(#sky)"/>
-<text x="24" y="44" font-size="22" font-weight="700" fill="#ffffff">✦ Favourite spells</text>
-<text x="24" y="62" font-size="12.5" fill="#c4b5fd">Share of code across owned repositories, forks excluded.</text>
-${bar}
-${legend}
-</svg>`;
 }
 
 /* -------------------------------------------------------- README helpers */
@@ -578,33 +350,71 @@ export async function main() {
   }
 
   const updated = new Date().toISOString().slice(0, 16).replace('T', ' ');
-  const dash = 'n/a';
-  const tiles = [
-    { label: 'Public repositories', value: num(rs.publicCount), color: '#a78bfa' },
-    { label: 'Private repositories', value: rs.privateCount === null ? dash : num(rs.privateCount), color: '#c084fc' },
-    { label: 'Stars earned', value: num(rs.stars), color: '#facc15' },
-    { label: 'Forks of my repos', value: num(rs.forks), color: '#22d3ee' },
-    { label: 'Contributions (1 year)', value: contrib ? num(contrib.total) : dash, color: '#34d399' },
-    { label: 'Pull requests', value: contrib ? num(contrib.prs) : dash, color: '#fb923c' },
-    { label: 'Issues opened', value: contrib ? num(contrib.issues) : dash, color: '#f472b6' },
-    { label: 'Streak (now / best)', value: st ? `${st.current} / ${st.longest}` : dash, color: '#60a5fa' },
-  ];
-
   const avatar = await fetchAvatar(login, root);
   const outDir = path.join(root, 'assets', 'generated');
   fs.mkdirSync(outDir, { recursive: true });
+
+  // ---------- Premium scenes from scenes.mjs ----------
+  const chips = (cfg.chips || cfg.stack || ['WEB', 'ANDROID', 'UI/UX', 'FIREBASE'])
+    .slice(0, 6)
+    .map((s) => String(s).toUpperCase());
+
   fs.writeFileSync(
     path.join(outDir, 'header.svg'),
     headerSvg({
-      headline: cfg.headline || 'Welcome',
+      headline: cfg.headline || 'Welcome To Magical World',
       name: cfg.name || login,
       roles: cfg.roles?.length ? cfg.roles : ['Developer'],
       avatar,
+      chips,
+      tagline: cfg.tagline || 'CODE · CREATE · CONJURE',
+      location: cfg.location || 'SRI LANKA',
     })
   );
-  fs.writeFileSync(path.join(outDir, 'stats.svg'), statsSvg(tiles, updated));
-  fs.writeFileSync(path.join(outDir, 'languages.svg'), languagesSvg(shares));
 
+  fs.writeFileSync(
+    path.join(outDir, 'skills.svg'),
+    skillsSvg({
+      skills: cfg.stack || [],
+      avatar,
+      name: cfg.nickname || cfg.name || login,
+    })
+  );
+
+  fs.writeFileSync(
+    path.join(outDir, 'sky.svg'),
+    skySvg({
+      days: contrib ? contrib.days : [],
+      total: contrib ? contrib.total : 0,
+      longest: st ? st.longest : 0,
+      current: st ? st.current : 0,
+      updated,
+    })
+  );
+
+  const featuredRepos = pickFeatured(repos, cfg.featured, login);
+  const nodes = featuredRepos.map((r) => ({
+    name: r.name,
+    description: r.description || '',
+    language: r.language || '',
+    stars: r.stargazers_count || 0,
+    color: LANG_COLORS[r.language] || PALETTE[0],
+  }));
+
+  fs.writeFileSync(
+    path.join(outDir, 'constellation.svg'),
+    constellationSvg({ nodes })
+  );
+
+  fs.writeFileSync(
+    path.join(outDir, 'footer.svg'),
+    footerSvg({
+      text: cfg.footer || 'Thanks for visiting the magical world',
+      updated,
+    })
+  );
+
+  // ---------- RPG layer from magic.mjs ----------
   const contributions = contrib ? contrib.total : 0;
   const prs = contrib ? contrib.prs : 0;
   const issues = contrib ? contrib.issues : 0;
@@ -622,6 +432,7 @@ export async function main() {
   };
   const rpg = computeRpg({ ...game, contributions });
   game.level = rpg.level;
+
   fs.writeFileSync(
     path.join(outDir, 'level.svg'),
     levelSvg({
@@ -629,11 +440,17 @@ export async function main() {
       rpg,
       avatar,
       topLang: game.topLang,
-      stats: { contributions: contributions, streak: st ? st.current : 0, stars: rs.stars, repos: game.repos },
+      stats: {
+        contributions,
+        streak: st ? st.current : 0,
+        stars: rs.stars,
+        repos: game.repos,
+      },
     })
   );
   fs.writeFileSync(path.join(outDir, 'achievements.svg'), achievementsSvg(game));
 
+  // ---------- README ----------
   const topLangs = shares.filter((s) => s.name !== 'Other').slice(0, 3).map((s) => s.name);
   const total = rs.publicCount + (rs.privateCount || 0);
   const autoLine =
@@ -657,12 +474,16 @@ export async function main() {
     activity: activity.length ? activity.join('\n') : '- No recent public spells yet. Stay tuned ✨',
     stack: (cfg.stack || []).join(','),
     topics: topics.length ? topics.map((t) => `\`${t}\``).join(' ') : '',
-    featured: renderFeatured(pickFeatured(repos, cfg.featured, login)),
+    featured: renderFeatured(featuredRepos),
     updated,
   };
 
   fs.writeFileSync(path.join(root, 'README.md'), renderTemplate(tpl, vars, links));
-  console.log(`Done: ${rs.publicCount} public, ${rs.privateCount ?? 'n/a'} private, ${shares.length} languages, ${activity.length} recent events.`);
+  console.log(
+    `Done: ${rs.publicCount} public, ${rs.privateCount ?? 'n/a'} private, ` +
+      `${shares.length} languages, ${activity.length} recent events, ` +
+      `level ${rpg.level} (${rpg.title}).`
+  );
 }
 
 main().catch((e) => {
