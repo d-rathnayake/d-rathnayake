@@ -1,0 +1,32 @@
+{
+  "username": "d-rathnayake",
+  "name": "Dilshan Rathnayake",
+  "nickname": "Shana",
+  "headline": "Welcome To Magical World",
+  "roles": [
+    "Web Developer",
+    "App Developer",
+    "Creative Problem Solver",
+    "Crafting Digital Magic"
+  ],
+  "bio": "Web & App Developer from Sri Lanka, turning ideas into fast, beautiful and magical digital experiences.",
+  "overview": [
+    "Building modern web apps and Android apps with a focus on clean code and premium UI.",
+    "Obsessed with smooth animations, rich colours and typography that feels alive.",
+    "Always learning, always experimenting, always shipping."
+  ],
+  "now": [
+    "Polishing a 3D animated portfolio website",
+    "Building web-based hardware controllers",
+    "Redesigning Android utilities with a premium look"
+  ],
+  "stack": ["html", "css", "js", "ts", "react", "nextjs", "tailwind", "kotlin", "android", "firebase", "github", "git", "vscode", "figma"],
+  "links": {
+    "linkedin": "",
+    "email": "",
+    "portfolio": "",
+    "spotify": ""
+  },
+  "featured": { "count": 4, "pin": [], "exclude": [] },
+  "languages": { "top": 6, "exclude": [] }
+}
