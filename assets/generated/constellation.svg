@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310" role="img" aria-labelledby="t" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
-<title id="t">Project constellation: portfolio.com</title>
+<title id="t">Project constellation: portfolio.com, PixelDeck</title>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#05030f"/><stop offset="0.55" stop-color="#150a36"/><stop offset="1" stop-color="#04141f"/>
@@ -19,6 +19,7 @@
     <stop offset="0" stop-color="#fbbf24"/><stop offset="0.5" stop-color="#f472b6"/><stop offset="1" stop-color="#22d3ee"/>
   </linearGradient>
   <radialGradient id="ng0"><stop offset="0" stop-color="#e97356" stop-opacity="0.75"/><stop offset="1" stop-color="#e97356" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ng1"><stop offset="0" stop-color="#A97BFF" stop-opacity="0.75"/><stop offset="1" stop-color="#A97BFF" stop-opacity="0"/></radialGradient>
   
 </defs>
 <style>
@@ -48,19 +49,34 @@
 <rect x="722" y="38" width="150" height="3" rx="1.5" fill="url(#bar)"/>
   <path d="M266.3,100.1 L704.1,159.8 L601.7,332.6 L125.2,141.8 L715.9,120.7 L144.3,312.7 L722.9,301 L440,229.1 L612.4,110.2" fill="none" stroke="#c4b5fd" stroke-opacity="0.12" stroke-dasharray="3 7"/>
   <circle cx="266.3" cy="100.1" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="704.1" cy="159.8" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="601.7" cy="332.6" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="125.2" cy="141.8" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="715.9" cy="120.7" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="144.3" cy="312.7" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="722.9" cy="301" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="440" cy="229.1" r="1.6" fill="#c4b5fd" opacity="0.4"/><circle cx="612.4" cy="110.2" r="1.6" fill="#c4b5fd" opacity="0.4"/>
-  <path d="M450,158" fill="none" stroke="#c4b5fd" stroke-opacity="0.18" stroke-width="1.5"/>
-  
+  <path d="M130,158 Q450,112 770,122" fill="none" stroke="#c4b5fd" stroke-opacity="0.18" stroke-width="1.5"/>
+  <path d="M130,158 Q450,112 770,122" fill="none" stroke="url(#path)" stroke-width="2.2" stroke-linecap="round" pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" values="1000;0;0;1000" keyTimes="0;0.4;0.85;1" dur="10s" repeatCount="indefinite"/>
+  </path>
+  <circle r="3.6" fill="#ffffff"><animateMotion dur="10s" repeatCount="indefinite" path="M130,158 Q450,112 770,122" keyPoints="0;1;1" keyTimes="0;0.4;1" calcMode="linear"/></circle>
   <g>
-  <circle cx="450" cy="158" r="32" fill="url(#ng0)"><animate attributeName="r" values="28;36;28" dur="3.5s" repeatCount="indefinite"/></circle>
+  <circle cx="130" cy="158" r="32" fill="url(#ng0)"><animate attributeName="r" values="28;36;28" dur="3.5s" repeatCount="indefinite"/></circle>
   <g>
-    <animateTransform attributeName="transform" type="rotate" from="0 450 158" to="360 450 158" dur="30s" repeatCount="indefinite"/>
-    <path d="M450,143 L453,155 L465,158 L453,161 L450,173 L447,161 L435,158 L447,155 Z" fill="#e97356" opacity="0.55"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 130 158" to="360 130 158" dur="30s" repeatCount="indefinite"/>
+    <path d="M130,143 L133,155 L145,158 L133,161 L130,173 L127,161 L115,158 L127,155 Z" fill="#e97356" opacity="0.55"/>
   </g>
-  <path d="M450,146 L452.4,155.6 L462,158 L452.4,160.4 L450,170 L447.6,160.4 L438,158 L447.6,155.6 Z" fill="#ffffff"/>
-  <circle cx="450" cy="158" r="3.5" fill="#e97356"/>
-  <text x="450" y="198" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">portfolio.com</text>
-  <text x="450" y="216" text-anchor="middle" font-size="11" font-weight="600" fill="#e97356">HTML</text>
-  <text x="450" y="234" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
+  <path d="M130,146 L132.4,155.6 L142,158 L132.4,160.4 L130,170 L127.6,160.4 L118,158 L127.6,155.6 Z" fill="#ffffff"/>
+  <circle cx="130" cy="158" r="3.5" fill="#e97356"/>
+  <text x="130" y="198" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">portfolio.com</text>
+  <text x="130" y="216" text-anchor="middle" font-size="11" font-weight="600" fill="#e97356">HTML</text>
+  <text x="130" y="234" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
+</g>
+<g>
+  <circle cx="770" cy="122" r="32" fill="url(#ng1)"><animate attributeName="r" values="28;36;28" dur="4.1s" repeatCount="indefinite"/></circle>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 770 122" to="360 770 122" dur="36s" repeatCount="indefinite"/>
+    <path d="M770,107 L773,119 L785,122 L773,125 L770,137 L767,125 L755,122 L767,119 Z" fill="#A97BFF" opacity="0.55"/>
+  </g>
+  <path d="M770,110 L772.4,119.6 L782,122 L772.4,124.4 L770,134 L767.6,124.4 L758,122 L767.6,119.6 Z" fill="#ffffff"/>
+  <circle cx="770" cy="122" r="3.5" fill="#A97BFF"/>
+  <text x="770" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">PixelDeck</text>
+  <text x="770" y="180" text-anchor="middle" font-size="11" font-weight="600" fill="#A97BFF">Kotlin</text>
+  <text x="770" y="198" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
 </g>
 </g>
 <rect x="1" y="1" width="898" height="308" rx="27" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
