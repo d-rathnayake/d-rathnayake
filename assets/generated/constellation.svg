@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310" role="img" aria-labelledby="t" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
-<title id="t">Project constellation: portfolio.com, devpulse</title>
+<title id="t">Project constellation: devpulse, portfolio</title>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#05030f"/><stop offset="0.55" stop-color="#150a36"/><stop offset="1" stop-color="#04141f"/>
@@ -18,8 +18,8 @@
   <linearGradient id="path" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#fbbf24"/><stop offset="0.5" stop-color="#f472b6"/><stop offset="1" stop-color="#22d3ee"/>
   </linearGradient>
-  <radialGradient id="ng0"><stop offset="0" stop-color="#e97356" stop-opacity="0.75"/><stop offset="1" stop-color="#e97356" stop-opacity="0"/></radialGradient>
-  <radialGradient id="ng1"><stop offset="0" stop-color="#89e051" stop-opacity="0.75"/><stop offset="1" stop-color="#89e051" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ng0"><stop offset="0" stop-color="#89e051" stop-opacity="0.75"/><stop offset="1" stop-color="#89e051" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ng1"><stop offset="0" stop-color="#e97356" stop-opacity="0.75"/><stop offset="1" stop-color="#e97356" stop-opacity="0"/></radialGradient>
   
 </defs>
 <style>
@@ -58,25 +58,26 @@
   <circle cx="130" cy="158" r="32.4" fill="url(#ng0)"><animate attributeName="r" values="28.4;36.5;28.4" dur="3.5s" repeatCount="indefinite"/></circle>
   <g>
     <animateTransform attributeName="transform" type="rotate" from="0 130 158" to="360 130 158" dur="30s" repeatCount="indefinite"/>
-    <path d="M130,142.8 L133.04,154.96 L145.2,158 L133.04,161.04 L130,173.2 L126.96,161.04 L114.8,158 L126.96,154.96 Z" fill="#e97356" opacity="0.55"/>
+    <path d="M130,142.8 L133.04,154.96 L145.2,158 L133.04,161.04 L130,173.2 L126.96,161.04 L114.8,158 L126.96,154.96 Z" fill="#89e051" opacity="0.55"/>
   </g>
   <path d="M130,145.8 L132.44,155.56 L142.2,158 L132.44,160.44 L130,170.2 L127.56,160.44 L117.8,158 L127.56,155.56 Z" fill="#ffffff"/>
-  <circle cx="130" cy="158" r="3.5" fill="#e97356"/>
-  <text x="130" y="198.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">portfolio.com</text>
-  <text x="130" y="216.13" text-anchor="middle" font-size="11" font-weight="600" fill="#e97356">HTML · 1 star</text>
-  <text x="130" y="234.13" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
+  <circle cx="130" cy="158" r="3.5" fill="#89e051"/>
+  <text x="130" y="198.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">devpulse</text>
+  <text x="130" y="216.13" text-anchor="middle" font-size="11" font-weight="600" fill="#89e051">Shell · 1 star</text>
+  <text x="130" y="234.13" text-anchor="middle" font-size="11.5" fill="#c4b5fd">🗃️ DevPulse [ by d-rathnayake</text>
+  <text x="130" y="249.13" text-anchor="middle" font-size="11.5" fill="#c4b5fd">] !</text>
 </g>
 <g>
-  <circle cx="770" cy="122" r="32" fill="url(#ng1)"><animate attributeName="r" values="28;36;28" dur="4.1s" repeatCount="indefinite"/></circle>
+  <circle cx="770" cy="122" r="32.4" fill="url(#ng1)"><animate attributeName="r" values="28.4;36.5;28.4" dur="4.1s" repeatCount="indefinite"/></circle>
   <g>
     <animateTransform attributeName="transform" type="rotate" from="0 770 122" to="360 770 122" dur="36s" repeatCount="indefinite"/>
-    <path d="M770,107 L773,119 L785,122 L773,125 L770,137 L767,125 L755,122 L767,119 Z" fill="#89e051" opacity="0.55"/>
+    <path d="M770,106.8 L773.04,118.96 L785.2,122 L773.04,125.04 L770,137.2 L766.96,125.04 L754.8,122 L766.96,118.96 Z" fill="#e97356" opacity="0.55"/>
   </g>
-  <path d="M770,110 L772.4,119.6 L782,122 L772.4,124.4 L770,134 L767.6,124.4 L758,122 L767.6,119.6 Z" fill="#ffffff"/>
-  <circle cx="770" cy="122" r="3.5" fill="#89e051"/>
-  <text x="770" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">devpulse</text>
-  <text x="770" y="180" text-anchor="middle" font-size="11" font-weight="600" fill="#89e051">Shell</text>
-  <text x="770" y="198" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
+  <path d="M770,109.8 L772.44,119.56 L782.2,122 L772.44,124.44 L770,134.2 L767.56,124.44 L757.8,122 L767.56,119.56 Z" fill="#ffffff"/>
+  <circle cx="770" cy="122" r="3.5" fill="#e97356"/>
+  <text x="770" y="162.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">portfolio</text>
+  <text x="770" y="180.13" text-anchor="middle" font-size="11" font-weight="600" fill="#e97356">HTML · 1 star</text>
+  <text x="770" y="198.13" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
 </g>
 </g>
 <rect x="1" y="1" width="898" height="308" rx="27" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
