@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310" role="img" aria-labelledby="t" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
-<title id="t">Project constellation: devpulse, devflow, portfolio, DWS</title>
+<title id="t">Project constellation: devpulse, DWS, devflow, portfolio</title>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#05030f"/><stop offset="0.55" stop-color="#150a36"/><stop offset="1" stop-color="#04141f"/>
@@ -19,9 +19,9 @@
     <stop offset="0" stop-color="#fbbf24"/><stop offset="0.5" stop-color="#f472b6"/><stop offset="1" stop-color="#22d3ee"/>
   </linearGradient>
   <radialGradient id="ng0"><stop offset="0" stop-color="#89e051" stop-opacity="0.75"/><stop offset="1" stop-color="#89e051" stop-opacity="0"/></radialGradient>
-  <radialGradient id="ng1"><stop offset="0" stop-color="#a78bfa" stop-opacity="0.75"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
-  <radialGradient id="ng2"><stop offset="0" stop-color="#e97356" stop-opacity="0.75"/><stop offset="1" stop-color="#e97356" stop-opacity="0"/></radialGradient>
-  <radialGradient id="ng3"><stop offset="0" stop-color="#89e051" stop-opacity="0.75"/><stop offset="1" stop-color="#89e051" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ng1"><stop offset="0" stop-color="#89e051" stop-opacity="0.75"/><stop offset="1" stop-color="#89e051" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ng2"><stop offset="0" stop-color="#a78bfa" stop-opacity="0.75"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ng3"><stop offset="0" stop-color="#e97356" stop-opacity="0.75"/><stop offset="1" stop-color="#e97356" stop-opacity="0"/></radialGradient>
   
 </defs>
 <style>
@@ -72,37 +72,37 @@
   <circle cx="343.3" cy="122" r="32.4" fill="url(#ng1)"><animate attributeName="r" values="28.4;36.5;28.4" dur="4.1s" repeatCount="indefinite"/></circle>
   <g>
     <animateTransform attributeName="transform" type="rotate" from="0 343.3 122" to="360 343.3 122" dur="36s" repeatCount="indefinite"/>
-    <path d="M343.3,106.8 L346.34000000000003,118.96 L358.5,122 L346.34000000000003,125.04 L343.3,137.2 L340.26,125.04 L328.1,122 L340.26,118.96 Z" fill="#a78bfa" opacity="0.55"/>
+    <path d="M343.3,106.8 L346.34000000000003,118.96 L358.5,122 L346.34000000000003,125.04 L343.3,137.2 L340.26,125.04 L328.1,122 L340.26,118.96 Z" fill="#89e051" opacity="0.55"/>
   </g>
   <path d="M343.3,109.8 L345.74,119.56 L355.5,122 L345.74,124.44 L343.3,134.2 L340.86,124.44 L331.1,122 L340.86,119.56 Z" fill="#ffffff"/>
-  <circle cx="343.3" cy="122" r="3.5" fill="#a78bfa"/>
-  <text x="343.3" y="162.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">devflow</text>
-  <text x="343.3" y="180.13" text-anchor="middle" font-size="11" font-weight="600" fill="#a78bfa">1 star</text>
+  <circle cx="343.3" cy="122" r="3.5" fill="#89e051"/>
+  <text x="343.3" y="162.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">DWS</text>
+  <text x="343.3" y="180.13" text-anchor="middle" font-size="11" font-weight="600" fill="#89e051">Shell · 1 star</text>
   <text x="343.3" y="198.13" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
 </g>
 <g>
   <circle cx="556.7" cy="168" r="32.4" fill="url(#ng2)"><animate attributeName="r" values="28.4;36.5;28.4" dur="4.7s" repeatCount="indefinite"/></circle>
   <g>
     <animateTransform attributeName="transform" type="rotate" from="0 556.7 168" to="360 556.7 168" dur="42s" repeatCount="indefinite"/>
-    <path d="M556.7,152.8 L559.74,164.96 L571.9000000000001,168 L559.74,171.04 L556.7,183.2 L553.6600000000001,171.04 L541.5,168 L553.6600000000001,164.96 Z" fill="#e97356" opacity="0.55"/>
+    <path d="M556.7,152.8 L559.74,164.96 L571.9000000000001,168 L559.74,171.04 L556.7,183.2 L553.6600000000001,171.04 L541.5,168 L553.6600000000001,164.96 Z" fill="#a78bfa" opacity="0.55"/>
   </g>
   <path d="M556.7,155.8 L559.1400000000001,165.56 L568.9000000000001,168 L559.1400000000001,170.44 L556.7,180.2 L554.26,170.44 L544.5,168 L554.26,165.56 Z" fill="#ffffff"/>
-  <circle cx="556.7" cy="168" r="3.5" fill="#e97356"/>
-  <text x="556.7" y="208.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">portfolio</text>
-  <text x="556.7" y="226.13" text-anchor="middle" font-size="11" font-weight="600" fill="#e97356">HTML · 1 star</text>
+  <circle cx="556.7" cy="168" r="3.5" fill="#a78bfa"/>
+  <text x="556.7" y="208.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">devflow</text>
+  <text x="556.7" y="226.13" text-anchor="middle" font-size="11" font-weight="600" fill="#a78bfa">1 star</text>
   <text x="556.7" y="244.13" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
 </g>
 <g>
-  <circle cx="770" cy="130" r="32" fill="url(#ng3)"><animate attributeName="r" values="28;36;28" dur="5.3s" repeatCount="indefinite"/></circle>
+  <circle cx="770" cy="130" r="32.4" fill="url(#ng3)"><animate attributeName="r" values="28.4;36.5;28.4" dur="5.3s" repeatCount="indefinite"/></circle>
   <g>
     <animateTransform attributeName="transform" type="rotate" from="0 770 130" to="360 770 130" dur="48s" repeatCount="indefinite"/>
-    <path d="M770,115 L773,127 L785,130 L773,133 L770,145 L767,133 L755,130 L767,127 Z" fill="#89e051" opacity="0.55"/>
+    <path d="M770,114.8 L773.04,126.96 L785.2,130 L773.04,133.04 L770,145.2 L766.96,133.04 L754.8,130 L766.96,126.96 Z" fill="#e97356" opacity="0.55"/>
   </g>
-  <path d="M770,118 L772.4,127.6 L782,130 L772.4,132.4 L770,142 L767.6,132.4 L758,130 L767.6,127.6 Z" fill="#ffffff"/>
-  <circle cx="770" cy="130" r="3.5" fill="#89e051"/>
-  <text x="770" y="170" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">DWS</text>
-  <text x="770" y="188" text-anchor="middle" font-size="11" font-weight="600" fill="#89e051">Shell</text>
-  <text x="770" y="206" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
+  <path d="M770,117.8 L772.44,127.56 L782.2,130 L772.44,132.44 L770,142.2 L767.56,132.44 L757.8,130 L767.56,127.56 Z" fill="#ffffff"/>
+  <circle cx="770" cy="130" r="3.5" fill="#e97356"/>
+  <text x="770" y="170.13" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">portfolio</text>
+  <text x="770" y="188.13" text-anchor="middle" font-size="11" font-weight="600" fill="#e97356">HTML · 1 star</text>
+  <text x="770" y="206.13" text-anchor="middle" font-size="11.5" fill="#c4b5fd">No description yet.</text>
 </g>
 </g>
 <rect x="1" y="1" width="898" height="308" rx="27" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
